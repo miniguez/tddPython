@@ -2,7 +2,7 @@ from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run
 from operator import isMappingType
 import random
-from fabric.api import run
+from fabric.api import run 
 REPO_URL = 'https://github.com/miniguez/tddPython.git'
 
 def deploy():
