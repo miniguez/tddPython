@@ -13,10 +13,13 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
-urlpatterns = [    
-    url(r'^new$', 'lists.views.new_list', name='new_list'),    
-    url(r'^(\d+)/$', 'lists.views.view_list', name='view_list'),
-    # url(r'^admin/', include(admin.site.urls)),
+from lists import views
+
+urlpatterns = [
+    url(r'^new$', views.new_list, name='new_list'),
+    url(r'^(\d+)/$', views.view_list, name='view_list'),
+    url(r'^(\d+)/share$', views.share_list, name='share_list'),
+    url(r'^users/(.+)/$', views.my_lists, name='my_lists'),
 ]

@@ -26,7 +26,7 @@ SECRET_KEY = '%7q&+ybk-7^u5yedu-1=8$81en0846%c=%2+%3mok#g_cz!@we'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+DOMAIN = "localhost"
 
 # Application definition
 
@@ -39,6 +39,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'lists',
     'accounts',
+)
+
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = (
+    'accounts.authentication.PersonaAuthenticationBackend',
 )
 
 MIDDLEWARE_CLASSES = (
